@@ -5,8 +5,14 @@ with open('py_file.txt', 'r', encoding='utf8') as file:
     for i in file:
         words.append(i.replace('\n', ''))
 word = choice(words).lower()  # рандом случайного значения из списка слов
+if  10 <=len(word) <=15:  # выставляю начальное значение коунта в зависимости от длинны слова
+    count = 11
+elif len(word)<10:
+    count = 14
+elif len(word)>15:
+    count=17
 
-print('***Добро пожаловать в игру "угадайка слов", у вас есть 10 попыток чтобы отгадать слово***')
+print(f'***Добро пожаловать в игру "угадайка слов", у вас есть {count} попыток чтобы отгадать слово***')
 print(word)
 pole = "*" * len(word)  # создали поле в которое будут помещаться буквы введенные пользователем
 
@@ -52,12 +58,7 @@ def func(a, wor):
     return pole
 
 
-if  10 <=len(word) <=15:  # выставляю начальное значение коунта в зависимости от длинны слова
-    count = 11
-elif len(word)<10:
-    count = 14
-elif len(word)>15:
-    count=17
+
 
 retur(pole)
 print(f'Колличество букв в слове -{len(word)}')
@@ -88,3 +89,4 @@ while True:
         retur(pole)
     if win() == False:
         break
+
